@@ -4,10 +4,17 @@ if [[ -z "${Password}" ]]; then
   Password="5c301bb8-6c77-41a0-a606-4ba11bbab084"
 fi
 ENCRYPT="chacha20-ietf-poly1305"
-QR_Path="/qr"
+
+if [[ -z "${QR_Path}" ]]; then
+  export QR_Path="/qr"
+fi
+echo ${QR_Path}
 
 #V2Ray Configuration
-V2_Path="/v2"
+if [[ -z "${V2_Path}" ]]; then
+  export V2_Path="/s233"
+fi
+echo ${V2_Path}
 mkdir /wwwroot
 mv /v2 /usr/bin/v2
 
